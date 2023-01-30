@@ -18,4 +18,3 @@ try:
     b.trace_print()
 except KeyboardInterrupt:
     sys.exit(3)
-
