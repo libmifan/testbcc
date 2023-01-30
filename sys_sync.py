@@ -14,7 +14,8 @@ int kprobe__sys_sync(void *ctx) {
 try:
     print("Tracing sys_sync()... Ctrl-C to end")
     time.sleep(2)
-    BPF(text=prog).trace_print()
+    b = BPF(text=prog)
+    b.trace_print()
 except KeyboardInterrupt:
     sys.exit(3)
 
