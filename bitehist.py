@@ -17,7 +17,7 @@ int kprobe__blk_account_io_done(struct pt_regs *ctx, struct request *req) {
 """
 
 # load BPF program
-b = BPF(text=prog)
+b = BPF(text=prog, cflags=["-Wno-macro-redefined"])
 
 # header
 print("Tracing... Hit Ctrl-C to end.")
